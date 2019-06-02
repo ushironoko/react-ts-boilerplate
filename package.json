@@ -46,5 +46,23 @@
     "lint-staged": "^8.1.7",
     "node-sass": "^4.12.0",
     "prettier": "^1.17.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.{js,vue}": [
+        "prettier --write",
+        "eslint --fix",
+        "git add"
+      ],
+      "*.scss": [
+        "prettier --write",
+        "git add"
+      ]
+    }
   }
 }

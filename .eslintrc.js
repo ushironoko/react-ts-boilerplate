@@ -2,7 +2,10 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
-    tsconfigRootDir: '.'
+    tsconfigRootDir: '.',
+    ecmaFeatures: {
+      jsx: true
+    }
   },
   plugins: ['@typescript-eslint', 'react', 'prettier'],
   extends: [
@@ -16,7 +19,7 @@ module.exports = {
      * @description rules of eslint-plugin-prettier
      */
     'prettier/prettier': 'error',
-    '@typescript-eslint/no-use-before-define': ['off', {'variables': false}]
+    '@typescript-eslint/no-use-before-define': ['off', { variables: false }]
   },
   settings: {
     react: {
